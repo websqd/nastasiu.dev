@@ -52,7 +52,7 @@ app.get('/', (c) => {
 app.use(
   '/deploy/*',
   cors({
-    origin: ['https://admin.marblecreative.co.uk', 'https://backend.marbleldn.com'],
+    origin: ['https://admin.marblecreative.co.uk', 'https://backend.marbleldn.com', 'https://backend-marbleldn.metabuild.ing'],
     allowMethods: ['GET']
   })
 )
@@ -71,6 +71,18 @@ app.all('/deploy/marblecreative', async (c) => {
 })
 app.all('/deploy/marbleldn', async (c) => {
 	const response = await fetch('https://app.coolify.io/api/v1/deploy?uuid=m4csg44sk48844wwks8ckso8&force=false', {
+		method: 'GET',
+		headers: {
+		  'Authorization': `Bearer ${c.env.COOLIFY_TOKEN}`,
+		  'Content-Type': 'application/json'
+		}
+	  });
+
+	  let data = await response.json();
+	  return c.json(data);
+})
+app.all('/deploy/marbleldn_staging', async (c) => {
+	const response = await fetch('https://app.coolify.io/api/v1/deploy?uuid=j8ggw4ks0wok0ks04g0w8ggk&force=false', {
 		method: 'GET',
 		headers: {
 		  'Authorization': `Bearer ${c.env.COOLIFY_TOKEN}`,
