@@ -1,4 +1,2 @@
-name = "nastasiu-dev"
-compatibility_date = "2026-06-16"
+name = "nastasiu"
 pages_build_output_dir = "./public"
-compatibility_flags = [ "nodejs_compat" ]
