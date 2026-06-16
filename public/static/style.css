@@ -1,224 +1,76 @@
-footer,main {
-  display: block;
+:root,
+[data-theme="dark"] {
+  --bg-base: #121214;
+  --surface-primary: #1e1e24;
+  --text-primary: #e4e4e7;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  --accent-primary: #6366f1;
+  --accent-hover: #4f46e5;
+  --border-default: rgba(255,255,255, 0.05);
+  --border-strong: rgba(255,255,255, 0.1);
+  --radius-lg: 16px;
+  --radius-md: 8px;
+  --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-mono: 'SF Mono', 'Menlo', monospace;
 }
 
-[hidden] {
-  display: none;
-}
-
-a {
-  background: 0 0;
-}
-
-a:active,a:hover {
-  outline: 0;
-}
-
-img {
-  border: 0;
-}
-
-/**
- * 1. Customize `background` for text selections
- * 2. Remove `text-shadow` selection highlight - http://cbrac.co/Q6swON
- */
-
-::-moz-selection {
-  background: #b3d4fc;
-  /* 1 */
-  text-shadow: none;
-  /* 2 */
-}
-
-::selection {
-  background: #b3d4fc;
-  /* 1 */
-  text-shadow: none;
-  /* 2 */
-}
-
-/* Change `background` for text selections when browser is unfocused */
-
-::selection:window-inactive {
-  background: #dedede;
-}
-
-/* Remove `background` on images when selected */
-
-img::selection {
-  background: transparent;
-}
-
-img::-moz-selection {
-  background: transparent;
-}
-
-p {
-	margin: 0;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
-  color: #eaeaea;
+  margin: 0;
+  font-family: var(--font-sans);
   font-size: 1rem;
-  font-family: "Palatino", serif;
+  font-weight: 400;
   line-height: 1.5;
-  background: #252528 radial-gradient(#252528, #0b0b0f);
-  background-attachment: fixed;
+  color: var(--text-primary);
+  background: var(--bg-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 main {
-	min-height: 100svh;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100svh;
+  padding: 32px;
 }
 
-/**
- * Links ($links)
- */
-
-a {
-  color: #eaeaea;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-a:focus {
-  outline: 1px dotted #eaeaea;
-}
-
-summary,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Trebuchet MS', 'Helvetica', sans-serif;
-  margin: 0 0 0.75rem;
-  color: #eaeaea;
-  font-weight: 600;
-  line-height: 1.333;
-  text-rendering: optimizeLegibility;
-}
-
-summary {
-	margin: 0;
-	cursor: pointer;
-	user-select: none;
-}
-
-summary::-webkit-details-marker {
-  display: none;
-}
-
-summary::after {
-	font-size: 0.875rem;
-	content: "↓";
-	margin-left: 0.5rem;
-}
-
-summary + * {
-	margin-top: 0.75rem;
-}
-
-details {
-	margin: 1rem 0 0;
-}
-
-details[open] summary::after {
-	content: "↑";
+.content {
+  text-align: center;
+  max-width: 480px;
 }
 
 h1 {
-  font-size: 3rem;
+  font-family: var(--font-sans);
+  font-size: 2.75rem;
   font-weight: 600;
-  margin-bottom: 3rem;
+  letter-spacing: -0.025em;
+  margin: 0 0 12px;
+  color: var(--text-primary);
 }
 
-h2 {
-  font-size: 2.5rem;
-  font-weight: 300;
-  text-align: center;
+p {
+  margin: 0;
 }
 
-h3 {
-  font-size: 1.875rem;
-  font-weight: 300;
-  text-align: center;
-}
-
-h4,.h4,h5,.h5,h6,.h6 {
-  font-size: 1rem;
-}
-
-.wrapper {
-  margin: 0 auto;
-  max-width: 73.125rem;
-  min-height: 100%;
-  width: 100%;
-}
-
-#services {
-  padding-top: 50px;
-  padding-bottom: 50px;
-  text-align: center;
-  width: 80vw;
-  max-width: 580px;
-}
-
-#services h2 {
-  color: #eaeaea;
-  padding: 0 0 15px 0;
-}
-
-#services h3 {
-  color: #eaeaea;
+.accent {
+  color: var(--accent-primary);
 }
 
 footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-family: 'Trebuchet MS', 'Helvetica', sans-serif;
-  font-weight: normal;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
   text-align: center;
-  background: rgba(0,0,0,0.25);
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
-  margin: 0;
-  min-height: 6rem;
-}
-
-.fa-copyright,.fa-copyright i {
-  font-style: normal;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 1rem;
-}
-
-.fa-copyright a {
-  padding-left: 5px;
-}
-
-#services ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.divider {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  margin: 2rem auto 1rem;
-  text-align: center;
-  border-top: 1px solid #aaa;
-}
-
-@media screen and (max-width: 1024px) {
-	h1 {
-		font-size: 1.875rem;
-	}
+  font-size: 0.75rem;
+  color: var(--text-muted);
 }
