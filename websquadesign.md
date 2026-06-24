@@ -1,6 +1,6 @@
 # Agnostic Design System & SaaS Blueprint
 
-This document defines the core design tokens, atomic components, and complex organisms for scalable SaaS applications. It is framework-agnostic. 
+This document defines the core design tokens, atomic components, and complex organisms for scalable SaaS applications. It is framework-agnostic.
 
 Instead of dictating exact pages (like a CRM or Newsletter), this system defines the **building blocks** (tables, filters, metric cards, sidebars) required to construct *any* of those interfaces.
 
@@ -60,7 +60,7 @@ The system is designed for both Soft Dark and Off-White Light themes. Implementa
 *   `radius-full`: `50%` (Avatars, circular icons)
 
 ### Typography
-*   `font-sans`: `'Inter', system-ui, -apple-system, sans-serif`
+*   `font-sans`: `'Helvetica Neue', Helvetica, Arial, sans-serif`
 *   `font-mono`: `'SF Mono', 'Menlo', monospace` (Required for IP addresses, IDs, metrics, tabular data).
 *   **Styles**:
     *   *Micro/Overline*: `0.75rem`, uppercase, `letter-spacing: 0.05em`, `text-secondary`, `font-weight: 600`.
@@ -86,7 +86,7 @@ The system is designed for both Soft Dark and Off-White Light themes. Implementa
 
 ### Status Badges & Tags
 *   **Base**: Radius `radius-pill`, Font size `0.75rem`, Padding `2px 8px`, Font weight `500`.
-*   **Variants**: Text color matches Semantic token, Background is Semantic token at 10% opacity. 
+*   **Variants**: Text color matches Semantic token, Background is Semantic token at 10% opacity.
 
 ### Forms & Controls
 *   **Inputs/Selects**: Radius `radius-md`, border `border-strong`, background `surface-input`. Focus state: `outline: 2px solid accent-primary; outline-offset: 1px`.
@@ -130,6 +130,6 @@ The system is designed for both Soft Dark and Off-White Light themes. Implementa
 ## 5. Agent Implementation Directives
 
 1.  **Strict Theme Mapping**: Map tokens to CSS variables (`--bg-base: #121214;`) or Tailwind configs. Never hardcode HEX values in components. Ensure `data-theme` attribute on `<html>` or `<body>` controls the variable output.
-2.  **Compose, Don't Reinvent**: Build complex views by stacking a Toolbar over a Data Table, using Status Badges for states. 
+2.  **Compose, Don't Reinvent**: Build complex views by stacking a Toolbar over a Data Table, using Status Badges for states.
 3.  **Data Alignment**: In tables, always right-align numbers and monetary values. Left-align text. Use `tabular-nums` for all dynamic data.
 4.  **Accessibility**: Ensure all interactive elements have the `focus-visible` offset outline ring. Ensure contrast ratios pass in Light Theme for `text-muted`.
